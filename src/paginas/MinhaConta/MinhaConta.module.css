@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 1rem;
+  max-width: 1199px;
+  height: 87vh;
+}
+
+@media (max-width: 425px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    width: 90%;
+    justify-content: space-around;
+  }
+}

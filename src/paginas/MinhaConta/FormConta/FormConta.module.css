@@ -1,0 +1,194 @@
+.container {
+  width: 83%;
+  height: 65%;
+  background: #cbcbcb;
+  border-radius: 8px;
+  padding: 32px;
+  position: relative;
+}
+
+.container > h1 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 32px;
+  z-index: 10;
+}
+
+.envelope {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.envelope > img {
+  width: 446px;
+  height: 381px;
+  z-index: 1;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  z-index: 1;
+}
+
+.formulario > label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.formulario > input {
+  background: #f2f2f2;
+  mix-blend-mode: normal;
+  height: 48px;
+  border: 1px solid #47a138;
+  outline: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.formulario > input::placeholder {
+  font-size: 16px;
+}
+
+.formulario > button {
+  width: 50%;
+  margin-top: 8px;
+}
+
+.botao {
+  background-color: #47a138;
+  color: #f7f7f7;
+  padding: 0.8rem 0;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+.botao:disabled {
+  background-color: #093103;
+}
+
+.formulario span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0 0 0.3rem;
+  color: red;
+}
+
+.detalhe__superior {
+  background-image: url(../../../assets/detalhe-sup.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.detalhe__inferior {
+  background-image: url(../../../assets/detalhe-inf.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@media (max-width: 425px) {
+  .container {
+    height: 100vh;
+  }
+
+  .envelope {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .envelope > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formulario {
+    width: 100%;
+  }
+
+  .formulario > button {
+    width: 50%;
+    margin: 24px auto 0 auto;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  .container {
+    height: 100vh;
+  }
+
+  .envelope {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .envelope > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .formulario {
+    width: 100%;
+  }
+
+  .formulario > button {
+    width: 50%;
+    margin: 24px auto 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    height: 50vh;
+  }
+
+  .envelope {
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .envelope > img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .formulario {
+    width: 90%;
+  }
+
+  .formulario > label {
+    margin-top: 0;
+  }
+
+  .formulario > input {
+    margin-bottom: 16px;
+  }
+
+  .formulario > button {
+    width: 50%;
+    margin: 8px auto 0 auto;
+  }
+}
