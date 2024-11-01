@@ -8,9 +8,9 @@ describe('Formulario de Login', ()=>{
     cy.fixture('usuarios').then(usuario => {
       cy.login(usuario[1].email, usuario[1].senha); //Aqui ele pega o primeiro usuário e a senha, e faz o login na página
       cy.visit('/home') // Verifica se o login está correto
-      cy.url().should('include' , '/home')
-      cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!')
-      cy.contains(usuario[1].nome).should('be.visible')
+      cy.url().should('include' , '/home') //verifica se a URL está correta
+      cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!') // Verifica se possui o texto de boas vindas
+      cy.contains(usuario[1].nome).should('be.visible') // Verifica se o nome do usuário logado vai aparecer 
     });
   });
 
