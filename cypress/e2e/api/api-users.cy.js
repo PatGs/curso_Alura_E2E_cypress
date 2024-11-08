@@ -90,8 +90,21 @@ describe('Realizando requisições para a API', () => {
         });
     });
 
-
-    //Cenário de falha realizando o PUT
+    //Realizando o teste com Variáveis de ambiente Protegendo os dados sensíveis
+   context('Realizando login via API', () => {
+    it('Deve permitir login do usuário Neilton Seguins', () => {
+        cy.request({
+            method: 'POST',
+            url: 'http://localhost:8000/users/login',
+            body: Cypress.env(),
+        }).then((resposta) => {
+            expect(resposta.status).to.eq(200);
+            expect(resposta.body).is.not.empty;   //Verifica se o corpo da mensagem não seja vazio
+            expect(resposta.body.user).to.have.property('nome'); //Verifica se vem de propriedade de nome do usuário
+            expect(resposta.body.user.nome).to.be.equal('Neilton Seguins');  //Que a propriedade seja igual ao nome Neiltn]on
+        })
+    });
+   })
     
 });
 
